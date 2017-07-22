@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sign up</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      height: 661px;
+      color: #666;
+      background: #fff;
+    }
+
+    a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    input {
+      border: none;
+      outline-style: none;
+    }
+
+    .head {
+      width: 990px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .head .left {
+      width: 300px;
+      height: 60px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      float: left;
+    }
+
+    .head .right {
+      width: 150px;
+      height: 18px;
+      margin-top: 50px;
+      float: right;
+    }
+
+    .head .left img {
+      height: 60px;
+      width: 170px;
+    }
+
+    .head .left span {
+      display: inline-block;
+      width: 110px;
+      height: 40px;
+      padding-left: 20px;
+      float: right;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .head .right img {
+      width: 18px;
+      height: 14px;
+      margin-right: 10px;
+    }
+
+    .righta {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+    }
+
+    .line:hover {
+      color: #e4393c;
+      text-decoration: underline;
+    }
+
+    .content {
+      height: 475px;
+      background: #f77102;
+      position: relative;
+    }
+
+    .content .body {
+      width: 990px;
+      margin: 0 auto;
+      /*background: url("./images/t.png") no-repeat;*/
+    }
+
+    .content .beijing {
+      width: 578px;
+      height: 384px;
+      float: left;
+    }
+
+    .content .login {
+      width: 346px;
+      height: 361px;
+      border: 1px solid #fff;
+      margin: 40px 30px 70px;
+      background: #fff;
+      float: right;
+    }
+
+    .login .top {
+      height: 40px;
+      border-bottom: 1px solid #f4f4f4;
+      font-size: 18px;
+      text-align: center;
+      padding-top: 14px;
+      position: relative;
+    }
+
+    .top>.l {
+      width: 173px;
+      height: 18px;
+      border-right: 1px solid #f4f4f4;
+      float: left;
+    }
+
+    .top>.r {
+      width: 173px;
+      height: 18px;
+      float: right;
+      position: absolute;
+      top: 15px;
+      left: 168px;
+    }
+
+    .top>.r a,
+    .top>.l a:hover {
+      color: #e4393c;
+      font-weight: 700;
+    }
+
+    .login .login-body {
+      width: 306px;
+      height: 192px;
+      padding: 30px 20px;
+      border-bottom: 1px solid #f4f4f4;
+    }
+
+    .text {
+      margin-top: 18px;
+    }
+
+    .f>.name {
+      width: 306px;
+      height: 40px;
+      border: 1px solid #bdbdbd;
+    }
+
+    #lab1 {
+      display: inline-block;
+      width: 41px;
+      height: 40px;
+      float: left;
+    }
+
+    #input {
+      display: inline-block;
+      height: 18px;
+      width: 210px;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .f>.forpass {
+      height: 18px;
+    }
+
+    .forpass>p {
+      width: 50px;
+      float: right;
+      font-size: 12px;
+    }
+
+    button {
+      height: 31px;
+      width: 50px;
+      background: #e4393c;
+      font-size: 20px;
+      letter-spacing: 20px;
+      color: #fff;
+      border: none;
+      outline-style: none;
+    }
+
+    .login .bottom {
+      width: 346px;
+      height: 53px;
+      background: #fcfcfc;
+    }
+
+    .login .bottom .sprit {
+      width: 306px;
+      height: 18px;
+      margin: 0 20px;
+    }
+
+    .sprit>.p {
+      display: inline-block;
+      float: left;
+      width: 50px;
+      font-size: 12px;
+      float: left;
+      margin-top: 15px;
+    }
+
+    .sprit>.p2 {
+      width: 77px;
+      margin-right: 20px;
+      float: right;
+    }
+
+    .sprit>.p1 {
+      border-right: 1px solid #fcfcfc;
+      /*float: left;*/
+    }
+
+    .p2 .aw {
+      font-size: 15px;
+      color: #e4393c;
+    }
+
+    #a1 {
+      display: inline-block;
+      height: 18px;
+      width: 19px;
+      background: url("https://misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2016-1124/i/QQ-weixin.png") 0 0;
+    }
+
+    #a2 {
+      display: inline-block;
+      height: 18px;
+      width: 19px;
+      background: url("https://misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2016-1124/i/QQ-weixin.png") 0 0;
+    }
+
+    .indent {
+      width: 990px;
+      height: 86px;
+      margin: 15px auto;
+    }
+
+    .bottom-inner {
+      width: 830px;
+      height: 66px;
+      margin: 0 auto;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-top: -30px;
+    }
+
+    ul {
+      list-style: none;
+      width: 1210px;
+      height: 66px;
+      margin-left: 140px;
+      margin-top: 30px;
+    }
+
+    li {
+      float: left;
+      width: 60px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-right: 1px solid #999;
+    }
+
+    ul li a {
+      color: #999;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <div class="left">
+      <!-- <a href="#"><img src="./images/jdhead.png"></a> -->
+      <span>欢迎登录</span>
+    </div>
+    <div class="right">
+      <a class="righta line" href="#"><img src="./images/2.png" alt="">登录页面，调查问卷</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="body">
+      <div class="beijing">
+        <img src="./images/t.png" alt="">
+      </div>
+      <div class="login">
+        <div class="top">
+          <div class="l"><a href="#">扫码登录</a></div>
+          <div class="r"><a href="#">账户登录</a></div>
+        </div>
+        <div class="login-body">
+          <form action="/success.html" id="f" method="post">
+            <div class="name">
+              <p>用户名</p>
+              <input id='user' pattern="^[^@#]{3,16}$" required type="text" name="name">
+
+            </div>
+            <div class="name text">
+              <p>密码</p>
+              <input id="paswd"  pattern='^[0-9A-Za-z]\w{7,15}$' required type="password" name="password">
+            </div>
+            <div class="forpass text">
+              <p><a class="line" href="#">忘记密码</a></p>
+            </div>
+            <button id="bt">登录</button>
+          </form>
+        </div>
+       <form  action="signin.html" method="post">
+         <button id="bt">注册</button>
+       </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    // $("#lab1 img").click(function(){
+    //   $(this).find("#input").focus();
+    // });
+    // $("input").focus(function(){
+    //
+    // });
+
+
+
+    // function createXHR() {
+    //   if (typeof XMLHttpRequest != "undefined") {
+    //     return new XMLHttpRequest();
+    //   } else if (typeof ActiveXObject != "undefined") {
+    //     if (typeof arguments.callee.activeXString != "string") {
+    //       var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+    //           "MSXML2.XMLHttp"
+    //         ],
+    //         i, len;
+    //       for (i = 0, len = versions.length; i < len; i++) {
+    //         try {
+    //           new ActiveXObject(versions[i]);
+    //           arguments.callee.activeXString = versions[i];
+    //           break;
+    //         } catch (ex) {
+    //           //跳过
+    //         }
+    //       }
+    //     }
+    //     return new ActiveXObject(arguments.callee.activeXString);
+    //   } else {
+    //     throw new Error("No XHR object available.");
+    //   }
+    // }
+    //
+    //
+    //
+    // //拼接get方法传递的数据
+    // function addURLParam(url, name, value) {
+    //   url += url.indexOf('?') == -1 ? '?' : '&';
+    //
+    //   //encodeURIComponent编码
+    //   url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    //   return url;
+    // }
+    //
+    // var bt = document.querySelector("#bt");
+    // bt.onclick = function() {
+    //   // $("#f").submit(function(){
+    //   var user = $("#f input[name=username]").val();
+    //   var pass = $("#f input[name=passwd]").val();
+    //   console.log(user);
+    //   console.log(pass);
+    //   // var passwds = $("#inputs2").val();
+    //   var url = addURLParam("http://127.0.0.1:8000/index", user, pass);
+    //   //  url = addURLParam(url,"password",passwds);
+    //
+    //
+    //   var xhr = createXHR();
+    //
+    //
+    //   //  xhr.onreadystatechange=function(){
+    //   //     if (xhr.readyState==4) {
+    //   //        console.log(xhr.response);
+    //   //     }
+    //   //     // else {
+    //   //     //    console.log("error");
+    //   //     // }
+    //   // };
+    //
+    //
+    //   //
+    //   xhr.open("get", url, true);
+    //
+    //   xhr.send(null);
+    //   // return false;
+    //
+    // };
+  </script>
+</body>
+
+</html>

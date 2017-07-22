@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <h1> welcome to <%= name %></h1>
+  <% info.forEach(function(info){ %>
+
+  <div class="">
+    <li>name:<span><%= info.name %></span></li>
+    <li>age:<span><%= info.age%></span></li>
+  </div>
+  <% }) %>
+
+  <% include ./form.ejs %>
+</body>
+</html>

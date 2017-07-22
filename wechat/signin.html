@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+  body{
+    background: url('http://i2.kiimg.com/1949/cdd2f5c6638b5d47.jpg');
+    background-size: 100%;
+  }
+    #title {
+      color: red;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 43%;
+    }
+
+    #btn2 {
+      background-color: red;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .content1,
+    .content2,.content3 {
+      width: 80%;
+      margin: auto;
+    }
+
+    .content {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1 id="title">欢迎注册</h1>
+  </div>
+  <div class="content">
+    <div class="content1">
+      <form method="post" action="/signin-succ">
+        <div class="form-group">
+          <label for="fname">用户名：</label>
+          <input type="text" name="username" id="fname" class="form-control" placeholder="请输入用户名" required pattern="^[^@#]{3,16}$">
+        </div>
+        <div class="form-group">
+          <label for="npwd">设置密码：</label>
+          <input type="password" name="userpasswd" id="npwd" class="form-control" placeholder="建议至少使用两种字符组合" required pattern='^[0-9A-Za-z]{6,15}$'>
+        </div>
+        <div class="form-group">
+          <label for="zpwd">确认密码：</label>
+          <input type="password" name="fuserpasswd" id="zpwd" class="form-control" placeholder="建议至少使用两种字符组合" required pattern='^[0-9A-Za-z]{6,15}$'>
+        </div>
+        </div>
+        <br>
+        <div class="content2">
+            <button class='btn btn-primary btn-block' id="btn2">提交注册</button>
+        </div>
+      </form>
+
+    <br>
+    <div class="content3">
+      <span class="s1">已有帐号？</span>
+      <!-- <input type="submit" value="请登录"> -->
+      <a href="/">请登录</a>
+    </div>
+ </div>
+
+</body>
+</html>

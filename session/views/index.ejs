@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% if(name) { %>
+      <!-- <a href=""></a> -->
+      <%= name %>
+  <% }else{ %>
+    <a href="/login">login</a>
+    <a href="/register">注册</a>
+    <% } %>
+  </body>
+</html>

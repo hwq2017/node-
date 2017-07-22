@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .form{
+      float: left;
+
+    }
+  </style>
+</head>
+
+<body>
+  <form  method="POST" action="/success">
+    <fieldset>
+      <h2>用户登录界面</h2>
+      <p>用户名</p>
+      <input id='user' pattern="^[^@#]{3,16}$" required type="text" name="name">
+      <p>密码</p>
+      <input id="paswd" id='password' pattern='^[0-9A-Za-z]\w{7,15}$' required type="password" name="password">
+      
+      <p>
+        <button id='btn'>登录</button>
+
+      </p>
+  </form>
+  <form class="form" action="/signin" method="post">
+    <button>注册</button>
+  </form>
+  <form action="/forget" method="post">
+    <button>忘记密码</button>
+  </form>
+
+
+</body>
+
+</html>

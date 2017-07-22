@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+  maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+  <style media="screen">
+     body{
+       height: 2000px;
+     }
+    .mynav{
+      background: #cf4646;
+    }
+    .mynav .navbar-collapse{
+      border-color: #ca3131;
+    }
+    .mynav .container .navbar-toggle{
+      border-color: #fff;
+    }
+    .mynav .navbar-header a,.mynav .collapse li>a{
+      color: #e8e8e8;
+    }
+    .mynav .container .navbar-toggle:hover{
+      background-color: transparent;
+    }
+    .myheader{
+      padding-top: 70px;
+      background-color: #cf4646;
+      color: #fff;
+    }
+    .myheader .btn-lg{
+      color: #efbfbf;
+      box-shadow: inset 0 0 0 2px #efbfbf;
+      border-radius: 2px;
+      border: none;
+      background-color: transparent;
+      margin-top: 20px;
+    }
+    .myheader .btn-lg:hover{
+      color: #fff;
+      border-color:#fff;
+    }
+    .myheader .lead{
+      font-weight:100;
+    }
+    .myheader .logo{
+      width: 100%;
+      max-width: 200px;
+    }
+    .benefits h2{
+      margin-top: 40px;
+    }
+    .benefits p{
+      font-size: 18px;
+    }
+    .foot{
+      margin-top: 60px;
+      color: #aaa;
+    }
+    .foot a{
+      color: #aaa;
+    }
+    .foot a:hover{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar-default mynav navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Gulp 中文网</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">中文文档</a></li>
+          <li><a href="#">入门指南</a></li>
+          <li><a href="#">API</a></li>
+          <li><a href="#">插件开发</a></li>
+          <li><a href="#">常见问题</a></li>
+          <li><a href="#">使用技巧</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- <header class="myheader jumbotron"> -->
+    <div class="jumbotron myheader text-center">
+      <h1>
+        <span>
+          <img class="logo" src="../gulp.svg" alt="">
+        </span>
+      </h1>
+      <p class="lead">用自动化构建工具增强你的工作流程！</p>
+      <p><a class="btn btn-lg btn-default" href="#" role="button">开始使用</a></p>
+    </div>
+  <!-- </header> -->
+    <div class="container benefits">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>易于使用</h2>
+          <p>通过代码优于配置的策略，Gulp 让简单的任务简单，复杂的任务可管理。</p>
+        </div>
+        <div class="col-md-6">
+          <h2>构建快速</h2>
+          <p>利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>插件高质</h2>
+          <p>Gulp 严格的插件指南确保插件如你期望的那样简洁高质得工作。</p>
+        </div>
+        <div class="col-md-6">
+          <h2>易于学习</h2>
+          <p>通过最少的 API，掌握 Gulp 毫不费力，构建工作尽在掌握：如同一系列流管道。</p>
+        </div>
+      </div>
+    </div>
+    <div class="container foot text-center">
+      <p>Gulp 中文网2015</p>
+      <p><a href="#">京ICP备11008151</a> | 京公网安备11010802014853</p>
+    </div>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

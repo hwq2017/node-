@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户注册</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      width: 1210px;
+      height: 66px;
+      margin-left: 140px;
+      margin-top: 30px;
+    }
+
+    li {
+      float: left;
+      width: 60px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-right: 1px solid #999;
+    }
+
+    ul li a {
+      color: #999;
+      font-size: 12px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .head {
+      height: 110px;
+      width: 100%;
+      background: url("https://misc.360buyimg.com/user/reg/1.0.0/css/i/headbg.jpg") repeat-x left bottom;
+    }
+
+    .head .headin {
+      width: 1210px;
+      margin: 0 auto;
+    }
+
+    .left span img {
+      height: 50px;
+      width: 160px;
+      margin-top: 24px;
+      float: left;
+    }
+
+    .left p {
+      width: 126px;
+      height: 34px;
+      float: left;
+      color: #333;
+      margin-top: 34px;
+      font-size: 24px;
+      padding-left: 30px;
+      line-height: 34px;
+    }
+
+    .right {
+      float: right;
+      margin-top: 55px;
+      font-size: 16px;
+    }
+
+    .right .s1 {
+      color: #999;
+    }
+
+    .right a {
+      color: #333;
+    }
+
+    .content {
+      width: 1210px;
+      height: 623px;
+      margin: 0 auto;
+      margin-top: 60px;
+    }
+
+    .form-main {
+      width: 830px;
+      margin-left: 190px;
+      margin-right: 190px;
+    }
+
+    .reg-form {
+      width: 400px;
+      padding-right: 75px;
+      border-right: 1px solid #ddd;
+      float: left;
+    }
+
+    .reg-form .form {
+      height: 86px;
+      width: 400px;
+    }
+
+    .reg-form .form-inner {
+      height: 54px;
+      border: 1px solid #ddd;
+    }
+
+    .reg-form .form-inner label {
+      width: 90px;
+      height: 52px;
+      padding-left: 20px;
+      line-height: 52px;
+      float: left;
+    }
+
+    .reg-form .form-inner .input {
+      border: 0 none;
+      width: 210px;
+      height: 19px;
+      line-height: 19px;
+      font-size: 14px;
+      padding-top: 17px;
+      padding-bottom: 18px;
+      padding-left: 20px;
+      outline-style: none;
+    }
+
+    #code {
+      width: 140px;
+    }
+
+    #btcode {
+      width: 110px;
+      height: 46px;
+      border: none;
+      background: #f2f2f2;
+      color: #333;
+      position: absolute;
+      top: 4px;
+      left: 282px;
+    }
+
+    .phonecode {
+      position: relative;
+    }
+
+    .china {
+      border-right: 1px solid #ddd;
+    }
+
+    .mail {
+      display: inline-block;
+      float: right;
+      position: relative;
+      top: -24px;
+      left: 0;
+    }
+
+    #a {
+      color: #38f;
+      font-size: 13px;
+      height: 18px;
+      line-height: 18px;
+    }
+
+    i {
+      font-size: 13px;
+      height: 18px;
+      line-height: 18px;
+      font-style: normal;
+    }
+
+    button {
+      width: 400px;
+      height: 54px;
+      background: red;
+      text-align: center;
+      font-size: 18px;
+      line-height: 54px;
+      color: white;
+      border: none;
+    }
+
+    p {
+      visibility: hidden;
+      width: 400px;
+      height: 32px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .visible {
+      visibility: visible;
+    }
+
+    .form-inner a img {
+      display: inline-block;
+      float: right;
+      width: 110px;
+      height: 40px;
+      position: relative;
+      top: -45px;
+      left: 0px;
+    }
+
+    .bottom {
+      width: 1210px;
+      height: 118px;
+      margin: 0 auto;
+      border-top: 1px solid #ddd;
+      margin-top: 50px;
+    }
+
+    .bottom-inner {
+      width: 830px;
+      height: 66px;
+      margin: 0 auto;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-top: -30px;
+    }
+
+    .form-main .right1 {
+      /*width: 280px;*/
+      height: 605px;
+      padding-left: 90px;
+      float: right;
+    }
+
+    .right1 .company {
+      width: 160px;
+      height: 61px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .right1 .inter {
+      margin-top: 40px;
+    }
+
+    .right1 .inter span {
+
+      display: inline-block;
+    }
+
+    .right1 .img1 {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      background: url("./images/sprit.png") -85px -40px;
+      float: left;
+    }
+
+    .right1 a span {
+      font-size: 15px;
+      color: #666;
+    }
+
+    .right1 a span:hover {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <div class="headin">
+      <div class="left">
+        <p class="visible">欢迎注册</p>
+      </div>
+      <div class="right">
+        <form class="" action="/" method="post">
+          <span class="s1">已有帐号？</span>
+          <sapn><input type="submit" value="请登录"></sapn>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="form-main">
+      <form action="/signin-success" method="post">
+        <div class="reg-form">
+          <div class="form">
+            <div class="form-inner">
+              <label for="">用户名</label>
+              <input class="input" type="text" pattern="^[^@#]{3,16}$" required name="username" placeholder="您的账户名和登录名" value="">
+            </div>
+            <p>支持中文、字母、数字、“-” “—”的组合，3-16个字符</p>
+          </div>
+          <div class="form">
+            <div class="form-inner">
+              <label for="">设置密码</label>
+              <input class="input" type="password" pattern='^[0-9A-Za-z]\w{7,15}$' required name="password" placeholder="建议至少使用两种字符组合">
+            </div>
+            <p>建议使用字母、数字和符号两种及以上的组合，7-15个字符</p>
+          </div>
+          <div class="form">
+            <div class="form-inner">
+              <label for="">确认密码</label>
+              <input class="input" type="password" pattern='^[0-9A-Za-z]\w{7,15}$' required name="passwd" placeholder="请再次输入密码">
+            </div>
+            <p>请再次输入密码</p>
+          </div>
+
+          <p></p>
+          <button type="submit" name="button">立即注册</button>
+
+        </div>
+      </form>
+      <div class="right1">
+        <div class="company">
+          <div class="signup">
+            <a href="#">
+              <div class="img1"></div>
+              <span>企业用户注册</span>
+            </a>
+          </div>
+
+        </div>
+        <div class="inter">
+          <a href="#">
+            <div class="img1"></div>
+            <span>INTERNATIONALCUSTOMERS</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

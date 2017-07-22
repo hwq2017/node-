@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery Mobile</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.bootcss.com/jquery-mobile/1.4.4/jquery.mobile.min.css" rel="stylesheet">
+  <!-- <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script> -->
+ <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-mobile/1.4.4/jquery.mobile.min.js"></script>
+  <script src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+  <style media="screen">
+    body{
+    width: 100%;
+     }
+    .send{
+     width: 70%;
+     margin-left: auto;
+     display: inline-block;
+
+    }
+    .content{
+
+      background: #eee;
+      }
+    #message{
+      list-style: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+    }
+
+    #messages li:nth-child(odd) {
+       background: #fff;
+     }
+     #join{
+       color: red;
+       height: 50px;
+       overflow: auto;
+       font-size: 20px;
+       text-align: center;
+       line-height: 50px;
+
+     }
+     .duihao{
+       float: right;
+
+       color: rgba(225, 120, 120, 0.5);
+     }
+     .myname{
+       margin-left: 45%;
+     }
+     .name{
+       color: #00ae9d;
+     }
+    #pageone{
+      background: url('http://up.qqjia.com/z/15/tu18260_5.jpg') 70%;
+    }
+    .foot{
+      background-color: #f2eada;
+    }
+    #pagetwo .main #message{
+      background: url('http://i2.kiimg.com/1949/92d6a01e80446d72.jpg');
+    }
+  </style>
+</head>
+
+<body>
+  <div data-role='page' id="pageone" >
+    <div data-role="main" class="ui-content">
+    <a href="#pagetwo" class="ui-btn">进入聊天室</a>
+  </div>
+  </div>
+
+  <div data-role='page'class="content" id="pagetwo"  style="width:100%">
+    <div data-role="header" data-position="fixed" style="background-color:#f2eada">
+      <a href="#pageone" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="a" data-inline="true">My button</a>
+      <h1>菜鸟H5-04</h1>
+       <a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext">图标</a>
+    </div>
+    <div role="main">
+      <ul id="message">
+
+      </ul>
+      <div id="join"></div>
+    </div>
+    <div data-role="footer" data-position="fixed" style="background-color:#f2eada;width:100%">
+      <!-- <a href="#" class="ui-btn ui-corner-all ui-icon-audio ui-btn-icon-notext">音频按钮</a> -->
+
+        <form class="form-inline"  action=""  style="width:100%">
+        <div class="form-group" style="width:100%">
+          <input type="text" class="form-control" id="information" placeholder="输入消息" name='content'style="width:80%;display:inline-block">
+          <button type="submit" class="btn btn-default" style="width:20%">发送</button>
+        </div>
+         <!-- <input type="submit" value="提交按钮"> -->
+      </form>
+
+      <!-- <a href="#" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">图标</a> -->
+
+    <!-- <h4>底部</h4> -->
+  </div>
+  </div>
+  <script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+  <script type="text/javascript">
+
+    var socket = io();
+
+    $('form').submit(function () {
+
+      socket.emit('chat message',$('#information').val());
+      $('#information').val('');
+      return false;
+    })
+    socket.on('chat message',function(msg,uname){
+      $('#message').prepend($('<li>').text(msg).css({"padding":"10px 10px","border-radius":"10%","word-wrap":"break-word","width":"55%","margin-top":"10px"}));
+      // socket.on('uname',function(uname){
+      // $('li:first').append($('<span>').text(':' + uname).addClass('name'));
+      //
+      // })
+      $('li:first').prepend($('<span>').text(uname + ':').addClass('name'));
+      $('li:first').css('background-color','#f8aba6');
+      socket.on('myname',function () {
+      $('li:first').css('background-color','lightblue');
+        $('li:first').addClass('myname');
+      })
+    });
+    socket.on('duihao',function(){
+      $('li:first').append('<span class="glyphicon glyphicon-ok duihao" aria-hidden="true"></span>');
+    })
+    socket.on('broadcast', function(msg){
+      $('#join').append('<p style={"color":"red"}><strong>Welcome to new friend.</strong></p>');
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/jquery-mobile/1.4.4/jquery.mobile.min.css" rel="stylesheet">
+  <!-- <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script> -->
+  <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-mobile/1.4.4/jquery.mobile.min.js"></script>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+
+    .forgtpwd{
+      display: inline-block;
+      float: right;
+      font-size: 12px;
+      text-decoration: none;
+      color: blue;
+    }
+    .form{
+      margin-top: 30px;
+    }
+    #title{
+      color: red;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    #btn1{
+      background-color: green;
+      color: #fff;
+      font-size: 15px;
+
+    }
+    #btn2{
+      background-color: red;
+      color: #fff;
+      font-size: 15px;
+
+    }
+
+
+  </style>
+</head>
+<body>
+  <div data-role="page" id="pageone">
+  <div data-role="header" data-position="fixed"><h1 id="title">简聊</h1></div>
+  <div data-role="main" class="ui-content form">
+    <form method="get" action="/ind">
+      <div class="ui-field-contain">
+        <label for="fname">用户名：</label>
+        <input type="text" name="fname" id="fname" placeholder="请输入用户名" required pattern="^[^@#]{3,16}$">
+      </div>
+      <div class="ui-field-contain">
+        <a class="forgtpwd" href="#pagetwo">忘记密码？</a>
+        <label for="fpwd">密码：</label>
+        <input type="password" name="fpasswd" id="fpwd" placeholder="请输入密码" required pattern='^[0-9A-Za-z]\w{6,15}$'>
+      </div>
+      <br>
+      <br>
+      <button class='btn' id="btn1">登录</button>
+    </form>
+    <form class="signin" action="/signin" method="post">
+      <!-- <input type="submit" data-inline="true" value="注册"> -->
+      <button class='btn'id="btn2">注册新用户</button>
+    </form>
+  </div>
+</div>
+<div data-role="page" id="pagetwo">
+  <div data-role="header" data-position="fixed"><h1 id="title">密码找回</h1></div>
+  <div data-role="main" class="ui-content form">
+    <form method="post" action="/success">
+      <div class="ui-field-contain">
+        <label for="fname">用户名：</label>
+        <input type="text" required name="username" id="fname" placeholder="您的账户名和登录名" pattern="^[^@#]{3,16}$">
+      </div>
+      <div class="ui-field-contain">
+        <label for="pwd">新密码：</label>
+        <input type="password" required name="userpasswd" id="pwd" placeholder="建议至少使用两种字符组合" pattern='^[0-9A-Za-z]\w{6,15}$'>
+      </div>
+      <div class="ui-field-contain">
+        <label for="fpwd">确认密码：</label>
+        <input type="password" name="fuserpasswd" id="fpwd" placeholder="请再次输入密码" pattern='^[0-9A-Za-z]\w{6,15}$'>
+      </div>
+      <br>
+      <br>
+      <button class='btn' id="btn1">提交</button>
+    </form>
+</div>
+<script type="text/javascript">
+$('#pageone').bind("mobileinit", function(){
+$.mobile.defaultPageTtransition = 'fade';
+})
+</script>
+</body>
+</html>

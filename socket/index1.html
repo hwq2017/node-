@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: rgb(130, 224, 255); padding: 3px; position:absolute;bottom: 0;width: 700px;height: 75px;}
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0;overflow: auto;height:525px;}
+      #messages li { height: 50px;padding: 5px 10px;}
+      #messages li:nth-child(odd) { background: #fff; }
+      #join{
+        color: red;
+        height: 50px;
+        overflow: auto;
+        font-size: 20px;
+        text-align: center;
+        line-height: 50px;
+
+      }
+      .duihao{
+        float: right;
+      }
+      .connect{
+        width: 702px;
+        height: 600px;
+        border: 1px solid yellow;
+        background: #eee;
+        margin: auto;
+        margin-top: 100px;
+       position: relative;
+      }
+
+    </style>
+</head>
+<body>
+
+
+  <div class="connect">
+  <div id="join"></div>
+  <ul id="messages"></ul>
+  <form  action="" method="post" class="">
+    <input id="user" type="text" name="username" class="">UserName
+    <input id='information' type="text" autocomplete="off"><button>send</button>
+  </form>
+  </div>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+
+  <script type="text/javascript">
+    var socket = io();
+
+
+    $('form').submit(function () {
+
+      socket.emit('chat message',$('#information').val(),$('#user').val());
+      $('#information').val('');
+      return false;
+    })
+    socket.on('chat message',function(msg,uname){
+      $('#messages').prepend($('<li>').text(msg));
+
+      $('li:first').prepend($('<span>').text(uname + ':').css({'color':'red','font-weight':'bold'}));
+
+    });
+    socket.on('duihao',function(){
+      $('li:first').append('<span class="glyphicon glyphicon-ok duihao" aria-hidden="true"></span>');
+
+    })
+
+    socket.on('broadcast', function(msg){
+
+      $('#join').append('<p><strong>Welcome to new friend.</strong></p>')
+    })
+  </script>
+</body>
+</html>
